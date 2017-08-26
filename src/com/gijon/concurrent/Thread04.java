@@ -1,5 +1,8 @@
 package com.gijon.concurrent;
 
+/**
+ * priority
+ */
 public class Thread04 extends Thread {
 
     public Thread04(String name) {
@@ -32,7 +35,6 @@ public class Thread04 extends Thread {
         t041.start();
         Thread04 t04 = new Thread04("max priority");
         t04.setPriority(MAX_PRIORITY); // 线程优先级具有传递性
-//        t04.setDaemon(true); // 是否守护线程：主线程消亡，子线程也消亡
         t04.start();
     }
 }
