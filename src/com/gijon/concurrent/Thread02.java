@@ -12,6 +12,7 @@ public class Thread02 extends Thread {
         while(count > 0){
             count--;
             System.out.println(Thread.currentThread().getName()+" : "+count);
+            System.out.println(this.currentThread().getName()+" : 休眠对象 ");
         }
     }
 
