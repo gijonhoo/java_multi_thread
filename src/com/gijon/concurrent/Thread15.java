@@ -58,7 +58,6 @@ public class Thread15 extends Thread {
         t152.start();
         t153.start();
 
-
     }
 
 }
