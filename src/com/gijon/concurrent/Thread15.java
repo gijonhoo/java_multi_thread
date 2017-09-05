@@ -28,7 +28,9 @@ public class Thread15 extends Thread {
     }
 
     /**
+     * 相同对象 静态方法 同步执行 非静态方法与静态方法异步执行
      * 测试 Class锁 与 Object锁 不是同一个锁
+     * 非静态方法 Object锁
      */
     public synchronized void printC(){
         System.out.println("线程名称："+Thread.currentThread().getName() +"begin "+ System.currentTimeMillis()+" print C");
@@ -37,6 +39,7 @@ public class Thread15 extends Thread {
 
     /**
      * Class锁可以对类的所有的对象实例起作用 ：不同对象 同步执行
+     * synchronized static method() == synchronized(Class.class){}
      */
 
     @Override

@@ -44,8 +44,11 @@ public class Thread07 extends Thread {
         public void run() {
             System.out.println("1 "+round +" begin ==> "+new Date().toLocaleString());
             try {
-                Thread.sleep(1000);  // 任务不延时
+                // Thread.sleep(1000);  // 任务不延时
                 // Thread.sleep(3000); // 任务延时
+                for (int i = 0; i < 100; i++){
+                    System.out.println(i);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -62,7 +65,7 @@ public class Thread07 extends Thread {
         MyTask0 task0 = new MyTask0("任务0-2");
         MyTask1 task1 = new MyTask1();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String s = "2017-08-26 23:30:00";
+        String s = "2017-09-05 09:30:00";
         Date dateRef = sdf.parse(s);
         System.out.println("字符串时间："+dateRef.toLocaleString()+" 当前时间： "+ new Date().toLocaleString());
         // timer.schedule(task, dateRef); //3. 执行一次；计划时间早于当前时间，立即执行
@@ -81,7 +84,7 @@ public class Thread07 extends Thread {
         // scheduleAtFixRate():如果任务没有被延时，下一次任务的执行时间参考上一次任务的“结束时间”来计算；
         // 任务延时：下一次任务的执行时间参考上一次任务的“结束时间”来计算；
         // timer.schedule(task1, 1000, 2000); // 11. 逾期任务不执行：任务不追赶
-        // timer.scheduleAtFixedRate(task1, 5000, 2000); // 12. 任务没有被延时，下一次任务的时间是上一次任务开始的时间+delay的时间；
-        timer.scheduleAtFixedRate(task1, dateRef, 2000); // 13. 逾期任务执行： 任务“补充性”执行(追赶)
+        // timer.scheduleAtFixedRate(task1, 5000, 2000); // 12. 任务没有被延时，下一次任务的时间是上一次任务开始的时间+period的时间；
+         timer.scheduleAtFixedRate(task1, dateRef, 2000); // 13. 逾期任务执行： 任务“补充性”执行(追赶)
     }
 }

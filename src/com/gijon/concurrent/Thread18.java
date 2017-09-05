@@ -28,7 +28,7 @@ public class Thread18 extends Thread {
 
         t181.start();
         // lock = "456"; // 第二个线程延迟启动  +  字符串常量池--》导致Lock不是同一个对象
-        // Thread.sleep(500); // 注释后抢夺的锁是"123"
+        // Thread.sleep(50); // 注释后抢夺的锁是"123"  只要对象不变，即使对象的属性改变，运行结果还是同步的
         t182.start();
     }
 }

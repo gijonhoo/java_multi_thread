@@ -2,7 +2,7 @@ package com.gijon.concurrent;
 
 import java.io.*;
 /**
- * single
+ * singleton
  */
 public class Thread06 extends Thread {
     @Override
@@ -91,8 +91,6 @@ class MyObject1{
 
 }
 
-
-
 // 序列化和反序列化 导致结果多例 解决方法如下：
 /*
     protected Object read Resolve() throws ObjectStreamException{
@@ -147,8 +145,6 @@ enum MyEnum {
     class MyObject4 {
     }
 }
-
-
 
 // 前例违反单一职责原则 优化如下：
 // 另： 一个枚举类型实例化一次构造方法

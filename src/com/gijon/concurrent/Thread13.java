@@ -1,7 +1,5 @@
 package com.gijon.concurrent;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
-
 public class Thread13 extends Thread {
     private static PublicVar var;
     @Override
